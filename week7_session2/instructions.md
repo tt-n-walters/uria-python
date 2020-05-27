@@ -45,8 +45,8 @@ Mac/Linux:    python3
 and open the nltk downloader:
 ```
 All OSs:       import nltk
-All OSs:       nltk.download()
+               nltk.download()
 ```
-[nltk.download()](https://github.com/tt-n-walters/uria-python/blob/master/week7_session2/nltkdownloader.png)
+![nltk.download()](https://github.com/tt-n-walters/uria-python/raw/master/week7_session2/nltkdownloader.png)
 
-Select `all` and click `Download`.
+Select `all` in *Collections*->*Identifier* and click `Download`.
