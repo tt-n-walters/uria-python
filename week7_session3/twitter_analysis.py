@@ -15,15 +15,18 @@ def clean_tweet(tweet):
     # ...
     # Split into words, compare each word and remove if necessary
     words = tweet.split()
+    cleaned = []
     for word in words:
         if word.startswith("@"):
-            words.remove(word)
+            continue
         elif word.startswith("RT"):
-            words.remove(word)
+            continue
         elif word.startswith("http"):
-            words.remove(word)
+            continue
         elif "..." in word or "…" in word:
-            words.remove(word)
+            continue
+        # If we want to keep the word
+        cleaned.append(word)
 
     # Join the words back together
     tweet = " ".join(words)
