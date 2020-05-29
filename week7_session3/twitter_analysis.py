@@ -1,16 +1,11 @@
 from nltk.corpus import twitter_samples, stopwords
-from ntlk.tokenize import word_tokenizer
+from nltk.tokenize import word_tokenize
 from string import punctuation
 
 
 eng_stopwords = stopwords.words("english")
-
-print(twitter_samples.fileids())
 tweets = twitter_samples.strings("tweets.20150430-223406.json")
 
-print(type(tweets))
-print(len(tweets))
-print(tweets[315])
 
 # Data cleaning
 def clean_tweet(tweet):
@@ -39,7 +34,7 @@ def clean_tweet(tweet):
 
 
 def tokenize(tweet):
-    tokens = word_tokenizer(tweet)
+    tokens = word_tokenize(tweet)
     return tokens
 
 # Loop over the tokens, only keep those that aren't
@@ -53,3 +48,17 @@ def clean_tokens(tokens):
             continue
         cleaned.append(token)
     return cleaned
+
+
+
+
+
+tweet = tweets[990]
+cleaned = clean_tweet(tweet)
+tokens = tokenize(cleaned)
+cleaned_tokens = clean_tokens(tokens)
+
+print(tweet)
+print(cleaned)
+print(tokens)
+print(cleaned_tokens)
