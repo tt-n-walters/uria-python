@@ -1,5 +1,7 @@
-from nltk.corpus import twitter_samples, stopwords
+from nltk.corpus import twitter_samples, stopwords, wordnet
 from nltk.tokenize import word_tokenize
+from nltk.tag import pos_tag
+from nltk.stem import WordNetLemmatizer
 from string import punctuation
 
 
