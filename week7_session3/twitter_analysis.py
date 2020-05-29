@@ -1,6 +1,9 @@
-from nltk.corpus import twitter_samples
+from nltk.corpus import twitter_samples, stopwords
 from ntlk.tokenize import word_tokenizer
+from string import punctuation
 
+
+eng_stopwords = stopwords.words("english")
 
 print(twitter_samples.fileids())
 tweets = twitter_samples.strings("tweets.20150430-223406.json")
