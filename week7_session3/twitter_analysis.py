@@ -6,6 +6,7 @@ from string import punctuation
 
 
 eng_stopwords = stopwords.words("english")
+lemmatizer = WordNetLemmatizer()
 tweets = twitter_samples.strings("tweets.20150430-223406.json")
 
 
@@ -52,6 +53,17 @@ def clean_tokens(tokens):
     return cleaned
 
 
+def lemmatize(word, tag):
+    if tag.startswith("N"):
+        return lemmatizer.lemmatize(word, wordnet.NOUN)
+    elif tag.startswith("V"):
+        return lemmatizer.lemmatize(word, wordnet.VERB)
+    elif tag.startswith("RB"):
+        return lemmatizer.lemmatize(word, wordnet.ADV)
+    else:
+        return lemmatizer.lemmatize(word, wordnet.ADJ)
+        
+    
 
 
 
