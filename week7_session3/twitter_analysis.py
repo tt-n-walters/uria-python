@@ -24,3 +24,10 @@ def clean_tweet(tweet):
             words.remove(word)
         elif "..." in word or "…" in word:
             words.remove(word)
+
+    # Join the words back together
+    tweet = " ".join(words)
+    return tweet
+
+
+print(clean_tweet(tweets[315]))
