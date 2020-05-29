@@ -42,3 +42,14 @@ def tokenize(tweet):
     tokens = word_tokenizer(tweet)
     return tokens
 
+# Loop over the tokens, only keep those that aren't
+# stopwords or punctuation.
+def clean_tokens(tokens):
+    cleaned = []
+    for token in tokens:
+        if token in eng_stopwords:
+            continue
+        if token in punctuation:
+            continue
+        cleaned.append(token)
+    return cleaned
