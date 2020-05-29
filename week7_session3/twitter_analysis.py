@@ -29,7 +29,7 @@ def clean_tweet(tweet):
         cleaned.append(word)
 
     # Join the words back together
-    tweet = " ".join(words)
+    tweet = " ".join(cleaned)
     return tweet
 
 
