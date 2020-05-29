@@ -1,4 +1,6 @@
 from nltk.corpus import twitter_samples
+from ntlk.tokenize import word_tokenizer
+
 
 print(twitter_samples.fileids())
 tweets = twitter_samples.strings("tweets.20150430-223406.json")
@@ -33,4 +35,7 @@ def clean_tweet(tweet):
     return tweet
 
 
-print(clean_tweet(tweets[315]))
+def tokenize(tweet):
+    tokens = word_tokenizer(tweet)
+    return tokens
+
