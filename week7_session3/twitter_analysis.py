@@ -102,3 +102,11 @@ for tweet in tweets:
     extracted_emotions = count_emotions(lemmas)
     all_emotions.extend(extracted_emotions)
 
+
+# Automatically count the frequencies of all the emotions
+frequencies = collections.Counter(all_emotions)
+
+# Plot and show the graph
+plt.bar(frequencies.keys(), frequencies.values())
+
+plt.show()
