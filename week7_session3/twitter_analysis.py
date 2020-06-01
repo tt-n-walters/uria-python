@@ -5,6 +5,8 @@ from nltk.stem import WordNetLemmatizer
 from string import punctuation
 
 import json
+import collections
+import matplotlib.pyplot as plt
 
 
 eng_stopwords = stopwords.words("english")
@@ -89,7 +91,7 @@ for tweet in tweets:
     cleaned = clean_tweet(tweet)
     tokens = tokenize(cleaned)
     cleaned_tokens = clean_tokens(tokens)
-    tagged = pos_tag(clean_tokens)
+    tagged = pos_tag(cleaned_tokens)
 
     lemmas = []
     for word, tag in tagged:
