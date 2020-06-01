@@ -5,7 +5,9 @@ NLP in Spanish
 
 To download spaCy:
 ##### Windows
-Run `pip install spacy`, or if that is unsuccessful, try `python -m pip install spacy`
+Run `pip install spacy`, 
+
+`pip install --user spacy` or if that is unsuccessful, try `python -m pip install spacy`
 
 Then `python -m spacy download es_core_news_md`
 
