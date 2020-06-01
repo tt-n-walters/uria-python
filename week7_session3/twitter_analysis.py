@@ -5,8 +5,6 @@ from nltk.stem import WordNetLemmatizer
 from string import punctuation
 
 import json
-from collections import Counter
-import matplotlib.pyplot as plt
 
 
 eng_stopwords = stopwords.words("english")
@@ -84,21 +82,14 @@ def count_emotions(tokens):
     return counted_emotions
 
 
+# Loop through all tweets
+for tweet in tweets:
+    cleaned = clean_tweet(tweet)
+    tokens = tokenize(cleaned)
+    cleaned_tokens = clean_tokens(tokens)
+    tagged = pos_tag(clean_tokens)
 
-tweet = tweets[990]
-cleaned = clean_tweet(tweet)
-tokens = tokenize(cleaned)
-cleaned_tokens = clean_tokens(tokens)
-lems = []
-for token in cleaned_tokens:
-    print(token)
-    lems.extend(lemmatize(token, tag))
-counted = count_emotions(lems)
-frequencies = Counter(counted)
-
-plt.plot(frequencies.keys(), frequencies.values())
-
-print(tweet)
-print(cleaned)
-print(tokens)
-print(cleaned_tokens)
+    lemmas = []
+    for word, tag in tagged:
+        lemma = lemmatize(word, tag)
+        lemmas.append(lemma)
