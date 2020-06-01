@@ -82,8 +82,10 @@ def count_emotions(tokens):
     return counted_emotions
 
 
+all_emotions = []
 # Loop through all tweets
 for tweet in tweets:
+    # Perform NLP processes
     cleaned = clean_tweet(tweet)
     tokens = tokenize(cleaned)
     cleaned_tokens = clean_tokens(tokens)
@@ -93,3 +95,8 @@ for tweet in tweets:
     for word, tag in tagged:
         lemma = lemmatize(word, tag)
         lemmas.append(lemma)
+    
+    # Now to perform the extraction
+    extracted_emotions = count_emotions(lemmas)
+    all_emotions.extend(extracted_emotions)
+
