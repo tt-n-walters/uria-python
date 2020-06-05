@@ -16,4 +16,10 @@ def search_company(name):
         converted = json.loads(response.text)
         return converted
 
-get_all_info("uria-industrial")
+
+print("Enter name to search for:")
+name = input()
+companies = search_company(name)
+company = companies["objects"][0]
+company_name = company["slug"]
+print(company_name)
