@@ -10,3 +10,22 @@ people = [
     { "name": "Harry", "number": "4556 5311 0778 9962", "ccv": "572" }
 ]
 
+def print_data(person, string=None):
+    print(string, person["name"], string, person["number"], string, person["ccv"], string)
+
+
+def find_person(people, name):
+    found_person = None
+    for person in people:
+        if person["name"] == name:
+            found_person = person
+    if found_person:
+        return found_person
+
+
+
+found = find_person(people, "Harry")
+if found:
+    print_data(found)
+
+
