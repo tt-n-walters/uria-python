@@ -11,7 +11,7 @@ hair_colours = {
 }
 
 # Accessing items that may not exist
-print(hair_colours.get("Lucius", display_not_found("Lucius")))
+print(hair_colours.get("Lucius", "Hair colour not found."))
 
 # keys, values, items
 print(hair_colours.keys())
